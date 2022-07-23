@@ -3,6 +3,7 @@ import { useDrop } from "react-dnd";
 import FullCrate from "./FullCrate"
 import cocaCola from '../logos/Coca-Cola_logo.png'
 import '../App.css';
+import CrateRack from "./CrateRack";
 
 const FullCrateList =[
     {
@@ -45,9 +46,7 @@ const FullCrateList =[
         } )}
       </div>
       <div className="split-75 right" ref={drop}>
-        {board.map((fullcrate) => {
-          return <FullCrate  id={fullcrate.id} logo={fullcrate.logo} name={fullcrate.name} />
-        })}
+        <CrateRack />
       </div>
       </div>
       
