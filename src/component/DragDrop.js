@@ -1,30 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import FullCrate from "./FullCrate"
 import cocaCola from '../logos/Coca-Cola_logo.png'
 import '../App.css';
 import CrateRack from "./CrateRack";
-
-const FullCrateList =[
-    {
-      id: 1,
-      logo: cocaCola,
-      name: "Coca-Cola"
-    },
-    {
-      id: 2,
-      logo: cocaCola,
-      name: "Fanta"
-    }
-  
-  ]
+import { ProductContext } from "../Contexts/ProductContext";
 
   function DragDrop() {
+    const [products, setProducts] = useContext(ProductContext);
+    
     return (
-     
-
     <div>
       <div className="split-25 left">
-        {FullCrateList.map((fullcrate) => {
+      {products.map((fullcrate) => {
           return <FullCrate  id={fullcrate.id} logo={fullcrate.logo} name={fullcrate.name} />
         } )}
       </div>

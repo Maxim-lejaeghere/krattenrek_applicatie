@@ -1,15 +1,18 @@
 import React from "react";
 import './App.css';
 import DragDrop from "./component/DragDrop";
+import { ProductProvider } from "./Contexts/ProductContext";
 
 
 
 function App(){
 
   return(
-    <div>
-      < DragDrop />
-    </div>
+    <ProductProvider>
+      <div>
+        < DragDrop />
+      </div>
+    </ProductProvider>
   );
 
 }
