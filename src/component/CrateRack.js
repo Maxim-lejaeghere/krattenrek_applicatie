@@ -1,22 +1,7 @@
-import React, { useState } from "react";
-import { useDrop } from "react-dnd";
-import FullCrate from "./FullCrate"
-import cocaCola from '../logos/Coca-Cola_logo.png'
+import React from "react";
+import Shelve from "./Shelve";
 import '../App.css';
 
-const FullCrateList =[
-  {
-    id: 1,
-    logo: cocaCola,
-    name: "Coca-Cola"
-  },
-  {
-    id: 2,
-    logo: cocaCola,
-    name: "Fanta"
-  }
-
-]
 
 function CrateRack(){
     const [board, setBoard] = useState([]);
@@ -32,17 +17,11 @@ function CrateRack(){
     const addCrateToBoard = (id) => {
      const fullCrateList = FullCrateList.filter((crate) => id === crate.id);
      setBoard(() => []);
-     setBoard((board) => [...board, fullCrateList[0]]);
-    };
     return(
         <div className="rack" >
-            <div className="shelve" ref={drop}>
-            {board.map((fullcrate) => {
-            return <FullCrate  id={fullcrate.id} logo={fullcrate.logo} name={fullcrate.name} />
-            })}
-            </div>
-            <div className="shelve" ></div>
-            <div className="shelve" ></div>
+            <Shelve/>
+            <Shelve/>
+            <Shelve/>
             <div className="paws"></div>
         </div>
     );
