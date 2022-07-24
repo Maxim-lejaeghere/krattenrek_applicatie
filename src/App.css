@@ -91,3 +91,8 @@
       width: 100%;
       border-bottom: solid var(--light_blue);
   }
+
+  .menu_bar{
+    width: 100%;
+    height: 100%;
+  }
