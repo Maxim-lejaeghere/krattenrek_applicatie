@@ -11,7 +11,7 @@ function FullCrate({name, logo, id}){
        })
     }))
     return(
-        <div id={id} style={{ border: isDragging ? "5px solid pink" : "0px" }} className="crate"  ref={drag}>
+        <div style={{ border: isDragging ? "5px solid pink" : "0px" }} className="crate"  ref={drag}>
             <p>{name}</p>
             <img src={logo} alt="logo"></img>
         </div>
