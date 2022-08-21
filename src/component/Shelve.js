@@ -9,7 +9,7 @@ function Shelve() {
     const [shelve, setShelve] = useState([]);
     const [{ isOver }, drop] = useDrop(() => ({
       accept: "crate",
-      drop: (item) => addCrateToBoard(item.id),
+      drop: (item) => addCrateToBoard(item.key),
       collect: (monitor) => ({
         isOver: !!monitor.isOver(),
       }),

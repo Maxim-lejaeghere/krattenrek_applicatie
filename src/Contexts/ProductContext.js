@@ -41,18 +41,7 @@ export const ProductProvider = (props) => {
           id: 7,
           logo: cocaCola,
           name: "Coca-Cola"
-        },
-        {
-          id: 8,
-          logo: fanta,
-          name: "Fanta"
-        },
-        {
-          id: 3,
-          logo: bru,
-          name: "bru"
         }
-    
       ]);
 
       return(
