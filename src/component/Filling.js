@@ -2,9 +2,9 @@ import React from "react";
 import '../App.css';
 import { useDrag } from 'react-dnd/dist/hooks';
 
-function FullCrate({id, name, logo}){
+function Filling({id, name, logo}){
     const [{ isDragging }, drag] = useDrag(() => ({
-        type: "crate",
+        type: "filling",
         item: { key: id },
        collect: (monitor) => ({
         isDragging: !!monitor.isDragging(),
@@ -12,11 +12,11 @@ function FullCrate({id, name, logo}){
     }))
 
     return(
-        <div style={{ border: isDragging ? "5px solid pink" : "0px" }} className="crate"  ref={drag}>
+        <div style={{ border: isDragging ? "5px solid pink" : "0px" }} className="filling"  ref={drag}>
             <p>{name}</p>
             <img src={logo} alt="logo"></img>
         </div>
     );
 }
 
-export default FullCrate;
+export default Filling;

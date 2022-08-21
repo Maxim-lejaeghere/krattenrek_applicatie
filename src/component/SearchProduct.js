@@ -1,7 +1,7 @@
 import React, { useState,useContext, useEffect } from "react";
 import { ProductContext } from "../Contexts/ProductContext";
 import Select from 'react-select';
-import FullCrate from "./FullCrate";
+import Filling from "./Filling";
 
 
 
@@ -33,7 +33,9 @@ function SearchProduct(props) {
     return (
         <div>
             <Select defaultValue={defaultValue} options={options} onChange={onChange} />
-            <FullCrate key={selectedCrate.id} id={selectedCrate.id} name={selectedCrate.name} logo={selectedCrate.logo}/>
+            <div className="flex_alligment">
+                <Filling key={selectedCrate.id} id={selectedCrate.id} name={selectedCrate.name} logo={selectedCrate.logo}/>
+            </div>
         </div>
     );
 }

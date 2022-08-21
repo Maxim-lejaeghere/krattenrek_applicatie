@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useDrop } from "react-dnd";
-import FullCrate from "./FullCrate"
+import FullCrate from "./fillUpComponents/FullCrate"
 import { ProductContext } from "../Contexts/ProductContext";
 import '../App.css';
 function Shelve() {
@@ -8,7 +8,7 @@ function Shelve() {
     const [products] = useContext(ProductContext);
     const [shelve, setShelve] = useState([]);
     const [{ isOver }, drop] = useDrop(() => ({
-      accept: "crate",
+      accept: ['fullCrate', 'halfHalfCrate','halfQuartCrate','quartQuartCrate'],
       drop: (item) => addCrateToBoard(item.key),
       collect: (monitor) => ({
         isOver: !!monitor.isOver(),
@@ -22,9 +22,9 @@ function Shelve() {
     };
 
     return (
-        <div className="shelve" ref={drop}>
+        <div className="shelve flex_alligment" ref={drop}>
              {shelve.map((fullcrate) => {
-            return <FullCrate  key={fullcrate.id} logo={fullcrate.logo} name={fullcrate.name}/>
+            return <FullCrate  key={fullcrate.id}/>
         } )}
         </div>
     );
