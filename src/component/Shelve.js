@@ -24,7 +24,7 @@ function Shelve() {
     return (
         <div className="shelve" ref={drop}>
              {shelve.map((fullcrate) => {
-            return <FullCrate  id={fullcrate.id} logo={fullcrate.logo} name={fullcrate.name}/>
+            return <FullCrate  key={fullcrate.id} logo={fullcrate.logo} name={fullcrate.name}/>
         } )}
         </div>
     );
